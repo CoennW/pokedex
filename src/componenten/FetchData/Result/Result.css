@@ -5,17 +5,18 @@
     /* grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)); */
     grid-gap: 1rem;
     /* This is the standardized property now, but has slightly less support */
-    /* gap: 1rem */
-    border: solid 1px rgb(241, 241, 241);
+    /* gap: 1rem 
+    border: solid 1px rgb(241, 241, 241); */
 }
 
 
 .result-item { 
-    
-    border: solid 1px lightgray;
-    border-radius: 10px;
+    border: solid 1px rgb(255, 255, 255);
+    border-radius: 2rem;
     text-align: center;
-
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
 }
 
 img { 
@@ -24,3 +25,10 @@ img {
     margin: 10px;
     margin-top: 15px;
 }
+
+@media only screen and (max-width: 1000px) {
+    .result-items-grid {
+        grid-template-columns: repeat(2, minmax(100px,1fr));
+        
+    }
+  }

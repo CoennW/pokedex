@@ -3,7 +3,7 @@ import './Header.css';
 
 function Header(props) {
     return (
-      <h1>Pokedex</h1>
+      <h1>Search Pokedex</h1>
     )
   }
 

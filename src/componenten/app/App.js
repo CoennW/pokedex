@@ -17,7 +17,7 @@ function App(props) {
         <Header></Header>
         <FetchData></FetchData>
       </div>
-    )
+    ) 
   } 
  
 export default App;

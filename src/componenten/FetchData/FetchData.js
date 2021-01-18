@@ -29,9 +29,14 @@ function FetchData(props) {
     return (
       <div>
         <p>Pokemon ID's: {endPoint.offset} - {endPoint.offset + endPoint.limit}</p>
-          <Search></Search> 
-          <button onClick={() => setEndPoint({offset: endPoint.offset - (endPoint.offset <= 0 ? 0 : 20), limit: 20})}>Back</button>
-          <button onClick={() => setEndPoint({offset: endPoint.offset + 20, limit: 20})}>Next</button>
+          <div className="flex">
+            <Search></Search> 
+            <div className="page-buttons">
+              <p>Page:</p>
+              <button onClick={() => setEndPoint({offset: endPoint.offset - (endPoint.offset <= 0 ? 0 : 20), limit: 20})}>Back</button>
+              <button onClick={() => setEndPoint({offset: endPoint.offset + 20, limit: 20})}>Next</button>
+            </div> 
+          </div>      
           <Result results={fetchedPokemonList}></Result>
           
          

@@ -1,0 +1,64 @@
+.flex {
+    display: flex;
+    justify-content:space-between;
+    width: 100%;
+}
+
+.page-buttons p {
+    margin-top: 0px;
+    margin-right: 20px;
+    display: inline-block;
+    
+}
+
+.page-buttons  {
+    width: 30%;
+    margin: 1rem 1rem 1rem 0rem;
+}
+
+.page-buttons button {
+    color: white;
+    width: 100px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin: 0px;
+    margin-right: 5px;
+    border: solid 1px rgb(255, 255, 255);
+    border-radius: 1rem;
+    text-align: center;
+ 
+    background-color: rgba(37, 37, 37, 0.3);
+    backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .page-buttons  {
+        width: 50%;
+        margin: 1rem 1rem 1rem 1rem;
+    }
+
+    .page-buttons button {
+        color: white;
+        width: 75px;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        margin: auto;
+        margin-right: 5px;
+        border: solid 1px rgb(255, 255, 255);
+        border-radius: 1rem;
+        text-align: center;
+     
+        background-color: rgba(37, 37, 37, 0.3);
+        backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
+        -webkit-backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
+    }
+
+    .page-buttons p {
+        margin-top: 0px;
+        margin-right: 5px;
+        display: inline-block;
+        
+    }
+  }
