@@ -19,9 +19,18 @@
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px) saturate(160%) contrast(70%) brightness(100%);
     -webkit-backdrop-filter: blur(10px) saturate(160%) contrast(45%) brightness(140%);
-    z-index: 1;
-    
-    
+    z-index: 1;   
+}
+
+.search-results-container button {
+    color: white;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
 }
 
 .result-items{
@@ -30,7 +39,7 @@
     display: inline-block;
     padding: 15px 0px 15px 0px;
     width: 100%;
-    
+    cursor: pointer;
 }
 
 .result-items:hover {
@@ -38,7 +47,16 @@
     background-color:rgba(190, 57, 57, 0.1);
 }
 
-
+#closeSearchResult {
+    z-index: 0;
+    opacity: 0.1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+}
 
 #searchbar {
     color: white;

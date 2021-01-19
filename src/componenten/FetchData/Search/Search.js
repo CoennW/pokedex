@@ -14,7 +14,7 @@ function Search(props) {
   let list = [];
   let realList = useRef([]);
   const [toShow, setList] = useState([]);
-  const node = useRef();
+  
 
 
     // or with Promises
@@ -28,20 +28,34 @@ function Search(props) {
   })  
 
   const handleSearchInput = value => {
-    setList(list.filter(name => name.includes(value)))
+    
+    setList(list.filter(name => name.includes(value.toLowerCase())))
+    
+  }
+
+  const handleCloseSearch = (id) => {
+    
+    document.getElementById('closeSearchResult').style.display = 'none';
+    document.getElementById('searchResults').style.display = 'none';
+  }
+
+
+  const handleSearchClick = pokemonName => {
+    props.fetchPokemon(pokemonName);
+    handleCloseSearch();
   }
   
   
   useEffect(() => {
     realList.current = toShow.slice(0,10);
 
-    if(toShow.length === 0) {
+    if(toShow.length === 0 || document.getElementById('searchResults').value === '') {
       document.getElementById('searchResults').style.display = 'none';
+      document.getElementById('closeSearchResult').style.display = 'none';
 
-      
     } else 
     {
-      
+      document.getElementById('closeSearchResult').style.display = 'block';
       document.getElementById('searchResults').style.display = 'block';
     }
 }, [toShow] );
@@ -49,10 +63,12 @@ function Search(props) {
   
 return (
       <div className="search-container">
-        <input onInput={(e) => handleSearchInput(e.target.value)} id="searchbar" type="text" placeholder="Search Pokémon..."></input>
+        <input onChange={(e) => handleSearchInput(e.target.value)} id="searchbar" type="text" placeholder="Search Pokémon..."></input>
+        <div id="closeSearchResult" onClick={(e) => handleCloseSearch()} ></div>
         <div className="search-results-container" id="searchResults">
-          {console.log(realList.current)}
-          {realList.current.length <= 20 ? realList.current.map((i => {return <p key={i} className="result-items">{i}</p>})) :  null}
+          <button onClick={(e) => handleCloseSearch()}>X</button>
+          
+          {realList.current.length <= 20 ? realList.current.map((i => {return <p onClick={() => handleSearchClick(i)} key={i} className="result-items">{i}</p>})) :  null}
         </div>
       </div>
     )

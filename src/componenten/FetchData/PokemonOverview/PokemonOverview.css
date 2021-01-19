@@ -1,0 +1,65 @@
+.overview-container{
+    position: absolute;
+    top: 200px;
+    width: 960px;
+    height: 800px;
+    border-radius: 1rem;
+    
+    background: linear-gradient(to bottom right, #00b09b, #96c93d); 
+    overflow: hidden;
+}
+
+.overview-container button {
+    color: white;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    z-index: 2;
+}
+
+.overview-header-container {
+    overflow:hidden;
+    position: relative;
+    width: 100%;
+    height: 20%;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.overview-header {
+    display: flex;
+    justify-content:space-between;
+    width: 90%;
+}
+
+.overview-header img {
+    position: relative;
+    height: 100%;
+    width: auto;
+    margin: 0;
+    
+}
+
+.overview-header-data {
+    margin-left: 2rem;
+}
+
+.overview-header-data p {
+    margin: 0px;
+    color: rgb(230, 230, 230);
+}
+
+.overview-header-data h1 {
+    margin-bottom: 10px;
+    
+}
+
+
+.overview-data {
+    width: 100%;
+    height: 80%;
+    background-color: rgba(233, 233, 233, 1);
+}
