@@ -1,3 +1,51 @@
+.loading {
+    display: absolute;
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.loading:after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    border-radius: 100px;
+    border: 8px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: lds-dual-ring 0.7s ease-in-out infinite;
+}
+
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    
+    50%{
+        width: 70px;
+        height: 70px;
+        border: 3px dotted white;
+        border-color: #fff transparent #fff transparent;
+    }
+    
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    
+}
+
 .flex {
     display: flex;
     justify-content:space-between;
@@ -12,9 +60,9 @@
 }
 
 .page-buttons  {
-    
+    width: auto;
     margin: auto;
-    margin-right: 0;
+    
     
 }
 
@@ -32,36 +80,55 @@
     background-color: rgba(37, 37, 37, 0.3);
     backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
     -webkit-backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
+    outline:none;
 }
+
+.page-buttons button:hover {
+    animation-play-state: running;
+    animation: hoverButton 0.2s forwards ease-in-out;
+}
+
+@keyframes hoverButton {
+    100% { background-color: rgba(37, 37, 37, 0.4);}
+}
+
+.page-buttons button:active {
+    transform: scale(0.97, 0.97);
+}
+
+
+
 
 @media only screen and (max-width: 1000px) {
 
+    .flex {
+        display: flex;
+        justify-content:space-between;
+        width: 100%;
+    }
+    
     .page-buttons  {
-        width: auto;
-        margin: 1rem 1rem 1rem 1rem;
-        float: right;
+        width: 100%;
+        display: flex;
+        justify-content: right;
+        padding-left: 5%;
+        
     }
 
     .page-buttons button {
         color: white;
-        width: 50px;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        margin: auto;
-        margin-right: 5px;
+        width: 50%;
+        height: 95%;
         border: solid 1px rgb(255, 255, 255);
         border-radius: 1rem;
         text-align: center;
+        
         background-color: rgba(37, 37, 37, 0.3);
         backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
         -webkit-backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
     }
 
     .page-buttons p {
-       
-        margin-top: 0px;
-        margin-right: 5px;
         display: none;
-        
     }
   }

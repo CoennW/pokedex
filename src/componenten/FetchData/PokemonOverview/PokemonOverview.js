@@ -3,12 +3,16 @@ import OverviewData from './OverviewData';
 import './PokemonOverview.css';
 
 
+
 function PokemonOverview(props) {
 
   const stats = props.fetchedPokemonData;
-  
+ 
+
+
   return (
-    <div className="overview-bg"> 
+    
+    <div className="overview-bg fade-in" id="animateThis" > 
       <div className="overview-container">
         <button onClick={() => props.closePokemonOverview()}>X</button>
           <div className="overview-header-container">

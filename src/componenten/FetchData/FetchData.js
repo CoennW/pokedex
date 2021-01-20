@@ -10,6 +10,8 @@ const P = new Pokedex.Pokedex()
 
 function FetchData(props) {
 
+ const [isLoading, setIsLoading] = useState(false);
+
   const [endPoint, setEndPoint] = useState({offset:0, limit:20});
 
   const [fetchedPokemonList, setPokemonList] = useState();
@@ -22,28 +24,37 @@ function FetchData(props) {
 
 
   const fetchPokeList = endPointObject => {
+    setIsLoading(true);
     // or with Promises
     P.getPokemonsList(endPointObject)
     .then(function(response) {
         setPokemonList(response.results);
+        setIsLoading(false);
     })  
   }
 
   const fetchPokemon = pokemonName => {
+    setIsLoading(true);
     P.getPokemonByName(pokemonName)
     .then(function(response) {
-        setPokemonData(response);
+      
+      setPokemonData(response);
+      setIsLoading(false);
     })  
   }
 
   const closePokemonOverview = () => {
-    setPokemonData(null);
-    console.log('closed!')
+    document.getElementById('animateThis').classList.add('fade-out');
+    setTimeout(() => {
+      setPokemonData(null);  
+    }, 200);
+    
+  
   }
   
   return (
     <div>
-      <p>Pokemon ID's: {endPoint.offset} - {endPoint.offset + endPoint.limit}</p>
+     
         <div className="flex">
           
           <Search fetchPokemon={fetchPokemon} />
@@ -58,7 +69,11 @@ function FetchData(props) {
         <Result results={fetchedPokemonList} fetchPokemon={fetchPokemon}>
         
         </Result>
-        {fetchedPokemonData != null ? <PokemonOverview closePokemonOverview={closePokemonOverview} fetchedPokemonData={fetchedPokemonData}/> : null}
+        
+        {isLoading === true ? <div className="loading"></div> : null}
+
+
+        {fetchedPokemonData != null ?  <PokemonOverview  closePokemonOverview={closePokemonOverview} fetchedPokemonData={fetchedPokemonData}/>: null}
         
         
         

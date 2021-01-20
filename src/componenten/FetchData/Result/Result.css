@@ -18,7 +18,28 @@
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
     -webkit-backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
+    cursor: pointer;
+    
 }
+
+.result-item:hover {
+    animation-play-state: running;
+    animation: hover 0.1s ease-out;
+    border: 1px solid white;
+    animation-fill-mode: forwards;
+}
+
+
+ @keyframes hover {
+
+    
+      100% {
+        transform: scale(1.02, 1.02);
+        box-shadow: 0px 2px 8px rgb(0, 0, 0, 0.2);
+        border: 1px solid transparent;
+            
+        }
+ }
 
 img { 
     height: 100px;
@@ -26,6 +47,11 @@ img {
     margin: 10px;
     margin-top: 15px;
 }
+
+
+    
+    
+    
 
 @media only screen and (max-width: 1000px) {
     .result-items-grid {

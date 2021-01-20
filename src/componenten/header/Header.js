@@ -3,7 +3,10 @@ import './Header.css';
 
 function Header(props) {
     return (
-      <h1>Search Pokedex</h1>
+      <div className="header-container">
+        <h1 id="pageHeader">The Pokémon search app!</h1>
+        <p>Made by Coen Walter</p>
+      </div>
     )
   }
 

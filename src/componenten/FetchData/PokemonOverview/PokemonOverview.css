@@ -1,3 +1,33 @@
+.fade-in {
+    opacity: 0;
+    margin-top: -10px;
+    animation: fade-in 0.15s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+@keyframes fade-in {
+   
+    100% {
+      opacity: 1;
+      margin-top: 0px;
+    }
+  }
+
+  .fade-out {
+    opacity: 1;
+    margin-top: 0px;
+    animation: fade-out 0.15s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+@keyframes fade-out {
+   
+    100% {
+      opacity: 0;
+      margin-top: 10px;
+    }
+  }
+
 .overview-bg{
     position: fixed;
     display: flex;
@@ -27,6 +57,7 @@
     top: 5px;
     width: 30px;
     height: 30px;
+    font-size: 18px;
     background: none;
     border: none;
     z-index: 2;
@@ -213,7 +244,7 @@
     }
     #idNumber{
         font-size: 9.5rem;
-        margin-top: 50px;
+        margin-top: 70px;
         opacity: 0.5;
         
     }

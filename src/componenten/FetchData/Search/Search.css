@@ -1,5 +1,5 @@
 .search-container{
-    width: 50%;
+    min-width: 50%;
 }
 
 
@@ -83,12 +83,14 @@
 
   @media only screen and (max-width: 1000px) {
     .search-container{
-        
+        min-width: 50%;
     }
+
     .search-container button {
         font-size: 20px;
         margin: 10px;
     }
+
     .search-results-container {
         position: absolute;
         width: 100%;
