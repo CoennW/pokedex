@@ -12,8 +12,9 @@
 }
 
 .page-buttons  {
-    width: 30%;
-    margin: 1rem 1rem 1rem 0rem;
+    
+    margin: auto;
+    margin-right: 0;
     
 }
 
@@ -36,13 +37,14 @@
 @media only screen and (max-width: 1000px) {
 
     .page-buttons  {
-        width: 50%;
+        width: auto;
         margin: 1rem 1rem 1rem 1rem;
+        float: right;
     }
 
     .page-buttons button {
         color: white;
-        width: 75px;
+        width: 50px;
         padding-top: 1rem;
         padding-bottom: 1rem;
         margin: auto;
@@ -50,16 +52,16 @@
         border: solid 1px rgb(255, 255, 255);
         border-radius: 1rem;
         text-align: center;
-     
         background-color: rgba(37, 37, 37, 0.3);
         backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
         -webkit-backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
     }
 
     .page-buttons p {
+       
         margin-top: 0px;
         margin-right: 5px;
-        display: inline-block;
+        display: none;
         
     }
   }

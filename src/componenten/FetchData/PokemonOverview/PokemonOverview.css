@@ -1,12 +1,23 @@
+.overview-bg{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(42, 114, 54, 0.85);
+}
+
 .overview-container{
-    position: absolute;
-    top: 200px;
+    position: relative;
     width: 960px;
-    height: 800px;
+    height: auto;
     border-radius: 1rem;
-    
     background: linear-gradient(to bottom right, #00b09b, #96c93d); 
     overflow: hidden;
+    box-shadow: 0px 5px 25px rgb(0, 0, 0, 0.25);
 }
 
 .overview-container button {
@@ -25,7 +36,7 @@
     overflow:hidden;
     position: relative;
     width: 100%;
-    height: 20%;
+    height: 160px;
     background-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -33,18 +44,32 @@
     display: flex;
     justify-content:space-between;
     width: 90%;
+    height: inherit;
 }
 
 .overview-header img {
     position: relative;
     height: 100%;
     width: auto;
+    margin: 0;  
+}
+
+#idNumber {
+    color: black;
+    height: auto;
+    width: auto;
+    position: absolute;
+    right: 25%;
+    top: -100px;
     margin: 0;
-    
+    font-size: 16rem;
+    opacity: 0.4;
+  
 }
 
 .overview-header-data {
     margin-left: 2rem;
+    z-index: 1;
 }
 
 .overview-header-data p {
@@ -53,13 +78,143 @@
 }
 
 .overview-header-data h1 {
+    font-size: 4.5rem;
     margin-bottom: 10px;
-    
+    margin-top: 5px;
+    margin-bottom: 0px;
 }
 
 
 .overview-data {
+    position: relative;
     width: 100%;
     height: 80%;
-    background-color: rgba(233, 233, 233, 1);
+    background-color: rgba(233, 233, 233, 0.2);
+    overflow: hidden;
+    align-content: center;
+    
 }
+
+.cards-container {
+    position: relative;
+    width: auto;
+    margin: 25px;
+    height: auto;
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+  
+    
+}
+
+.card {
+    position: relative;
+    color: black;
+    height: 175px;
+    width: 47%;
+    max-width: 50%;
+    min-width: 25%;
+    background-color: white;
+    margin: 10px;
+    border-radius: 1rem;
+    overflow: auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 0px 8px rgb(0, 0, 0, 0.2);
+}
+
+.card h3 { 
+    color: white;
+    font-size: 1.3rem;
+    margin: 0;
+    text-indent: 25px;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+}
+
+.card ul {
+    margin:10px;
+    margin-left: 15px;
+    padding: 0px;
+    position: relative;
+}
+
+.card li {
+    position: relative;
+    text-indent: 10px;
+    list-style:none;
+    padding:0;
+    margin:0;
+    margin-bottom: 5px;
+   }
+
+.style-element{
+    position: absolute;
+    height: 15px;
+    width: 5px;
+    left: -15px;
+    top: 5px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(0, 156, 13, 0.5);
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    background:transparent;
+    display: none;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    display: none;
+  }
+
+  ::-webkit-scrollbar-track-piece{
+    display: none;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 2rem;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+
+  @media only screen and (max-width: 1000px) {
+    .card {
+        width: 100%;
+        max-width: 100%;
+        
+    }
+    .overview-container button {
+        font-size: 2rem;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+    .overview-container {
+        max-height: 98%;
+        max-width: 95%;
+        overflow: auto;
+    }
+    .overview-header-container {
+        height: 120px;
+    }
+    .overview-header-data {
+        margin-left: 2rem;
+    }
+    .overview-header-data h1 {
+        font-size: 3rem;
+    }
+    #idNumber{
+        font-size: 9.5rem;
+        margin-top: 50px;
+        opacity: 0.5;
+        
+    }
+  }

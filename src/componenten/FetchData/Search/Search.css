@@ -1,5 +1,5 @@
 .search-container{
-    width: 65%;
+    width: 50%;
 }
 
 
@@ -83,6 +83,23 @@
 
   @media only screen and (max-width: 1000px) {
     .search-container{
-        width: 50%;
+        
+    }
+    .search-container button {
+        font-size: 20px;
+        margin: 10px;
+    }
+    .search-results-container {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        left: 0;
+        top: 20;
+        border: solid 1px rgb(255, 255, 255);
+        border-radius: 1rem;
+        text-align: center;
+        background-color: rgba(6, 51, 0, 0.9);
+        backdrop-filter: none;
+        z-index: 1;   
     }
   }
