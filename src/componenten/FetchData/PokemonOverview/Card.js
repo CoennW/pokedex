@@ -29,7 +29,6 @@ function Card(props) {
             break;
         case props.cardTitles[3]:
             // Moves
-            console.log('jo');
             const moves = stats.moves;
             Array.prototype.push.apply(cardDataTitle, moves.map((x,i) => {return i + 1 + ': '}))
             Array.prototype.push.apply(cardData, moves.map((x,i) => {return x.move.name }))
@@ -44,7 +43,7 @@ function Card(props) {
                 <h3>{props.title}</h3>
                 
                     {cardData.map((stat, index) => {
-                        return <ul><div className="style-element"></div><li key={index}>{cardDataTitle[index] + stat}</li></ul>
+                        return <ul key={"list" + index}><div className="style-element"></div><li key={index}>{cardDataTitle[index] + stat}</li></ul>
                     })}
                 
             </div>

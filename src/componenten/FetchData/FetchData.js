@@ -53,12 +53,9 @@ function FetchData(props) {
   }
   
   return (
-    <div>
-     
-        <div className="flex">
-          
+    <div>     
+        <div className="flex"> 
           <Search fetchPokemon={fetchPokemon} />
-          
           <div className="page-buttons">
             <p>Page:</p>
             <button onClick={() => setEndPoint({offset: endPoint.offset - (endPoint.offset <= 0 ? 0 : 20), limit: 20})}>Back</button>
@@ -66,7 +63,7 @@ function FetchData(props) {
           </div> 
         </div>      
         
-        <Result results={fetchedPokemonList} fetchPokemon={fetchPokemon}>
+        <Result isLoading={isLoading} endPoint={endPoint.offset} results={fetchedPokemonList} fetchPokemon={fetchPokemon}>
         
         </Result>
         

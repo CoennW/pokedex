@@ -38,6 +38,7 @@
     left: 0;
     top: 0;
     background-color: rgba(42, 114, 54, 0.85);
+    z-index: 5;
 }
 
 .overview-container{

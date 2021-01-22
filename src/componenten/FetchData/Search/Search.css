@@ -1,5 +1,6 @@
 .search-container{
     min-width: 50%;
+    z-index: 4;
 }
 
 
