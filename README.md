@@ -1,3 +1,3 @@
 # pokedex
 
-Code in antoher branche 
+Code in another branche 
